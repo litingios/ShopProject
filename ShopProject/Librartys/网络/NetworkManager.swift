@@ -179,7 +179,9 @@ func NetWorkRequest(_ target: API, completion: @escaping successCallback, failed
 ///   - failed: 失败
 ///   - error: 错误
 @discardableResult // 当我们需要主动取消网络请求的时候可以用返回值Cancellable, 一般不用的话做忽略处理
-func NetWorkRequest(_ target: API, completion: @escaping successCallback, failed: failedCallback?, errorResult: errorCallback?) -> Cancellable? {
+/// isCarch 是否需要缓存，默认true
+/// 缓存参数
+func NetWorkRequest(_ target: API, isCarch: Bool = false, carchID: NSString = "", completion: @escaping successCallback, failed: failedCallback?, errorResult: errorCallback?) -> Cancellable? {
     
     // 先判断网络是否有链接 没有的话直接返回--代码略
     /*
@@ -193,24 +195,25 @@ func NetWorkRequest(_ target: API, completion: @escaping successCallback, failed
     let pathcaches = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
     let cachesDir = pathcaches[0]
     
-    let mutableSting = target.baseURL.absoluteString + target.path
+    let mutableSting = target.baseURL.absoluteString + target.path + (carchID as String)
     let lastStr = mutableSting.replacingOccurrences(of: "/", with: "-")
     let disPath = cachesDir + "/" + lastStr + "-.text"
-    
-    DispatchQueue.global().async {
-        do {
-            /// 获取json字符串
-            let str = try String .init(contentsOfFile: disPath, encoding: String.Encoding.utf8)
-            DispatchQueue.main.async {
-                /// 字符串转化为data
-                let data = str .data(using: String.Encoding.utf8, allowLossyConversion: true)
-                completion(data! as NSData)
+    if isCarch == true {
+        DispatchQueue.global().async {
+            do {
+                /// 获取json字符串
+                let str = try String .init(contentsOfFile: disPath, encoding: String.Encoding.utf8)
+                DispatchQueue.main.async {
+                    /// 字符串转化为data
+                    let data = str .data(using: String.Encoding.utf8, allowLossyConversion: true)
+                    completion(data! as NSData)
+                }
+            } catch {
+                print(error)
             }
-        } catch {
-            print(error)
         }
     }
-
+    
     return Provider.request(target) { result in
         // 隐藏hud
         switch result {
@@ -219,18 +222,17 @@ func NetWorkRequest(_ target: API, completion: @escaping successCallback, failed
                 let jsonData = try JSON(data: response.data)
                 print(jsonData)
                 
-                // 缓存
-                let jsonStr = String(data: response.data, encoding: String.Encoding.utf8) ?? ""
-                DispatchQueue.global().async {
-                    
-                    do {
-                        try jsonStr .write(toFile: disPath, atomically: true, encoding: String.Encoding.utf8)
-                    } catch {
-                        print(error)
+                if isCarch == true {
+                    // 缓存
+                    let jsonStr = String(data: response.data, encoding: String.Encoding.utf8) ?? ""
+                    DispatchQueue.global().async {
+                        do {
+                            try jsonStr .write(toFile: disPath, atomically: true, encoding: String.Encoding.utf8)
+                        } catch {
+                            print(error)
+                        }
                     }
                 }
-
-                
                 /// 这里的completion和failed判断条件依据不同项目来做，为演示demo我把判断条件注释了，直接返回completion。
 
                 completion(response.data as NSData)

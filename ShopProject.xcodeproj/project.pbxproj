@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E3325DB251AE16C004F62AB /* WCDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3325DA251AE16C004F62AB /* WCDManager.swift */; };
+		9E3325DD251AE181004F62AB /* GoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3325DC251AE181004F62AB /* GoodItem.swift */; };
 		9E4B96FB250F9AEA00A97873 /* MoyaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B96FA250F9AEA00A97873 /* MoyaConfig.swift */; };
 		9E4B96FD250F9B6B00A97873 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B96FC250F9B6B00A97873 /* APIProvider.swift */; };
 		9E4B96FF250F9F5900A97873 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B96FE250F9F5900A97873 /* NetworkManager.swift */; };
 		9E65CDF7250CE8D10067EA82 /* AddCarVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E65CDF6250CE8D10067EA82 /* AddCarVIew.swift */; };
+		9EADF38525185A6C0009A5BB /* ShopCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EADF38425185A6C0009A5BB /* ShopCarCell.swift */; };
+		9EADF39E2518D95D0009A5BB /* MeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EADF39C2518D95D0009A5BB /* MeHeaderCell.swift */; };
+		9EADF39F2518D95D0009A5BB /* MeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EADF39D2518D95D0009A5BB /* MeHeaderCell.xib */; };
+		9EADF3A22518D9690009A5BB /* MeCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EADF3A02518D9690009A5BB /* MeCommonCell.swift */; };
+		9EADF3A32518D9690009A5BB /* MeCommonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EADF3A12518D9690009A5BB /* MeCommonCell.xib */; };
 		9EAECDF22509CE4E0067D827 /* DetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAECDF02509CE4E0067D827 /* DetailHeaderCell.swift */; };
 		9EAECDF32509CE4E0067D827 /* DetailHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAECDF12509CE4E0067D827 /* DetailHeaderCell.xib */; };
 		9EAECDF62509CE620067D827 /* DetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAECDF42509CE620067D827 /* DetailImageCell.swift */; };
@@ -87,10 +94,21 @@
 		0CF649F144922A31B2F5148D /* Pods_ShopProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6A92ED0FCC9FE7E3DEEA62 /* Pods-ShopProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopProject.release.xcconfig"; path = "Target Support Files/Pods-ShopProject/Pods-ShopProject.release.xcconfig"; sourceTree = "<group>"; };
 		25B1AD900A341812D20863B2 /* Pods-ShopProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopProject.debug.xcconfig"; path = "Target Support Files/Pods-ShopProject/Pods-ShopProject.debug.xcconfig"; sourceTree = "<group>"; };
+		9E3325DA251AE16C004F62AB /* WCDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCDManager.swift; sourceTree = "<group>"; };
+		9E3325DC251AE181004F62AB /* GoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodItem.swift; sourceTree = "<group>"; };
 		9E4B96FA250F9AEA00A97873 /* MoyaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaConfig.swift; sourceTree = "<group>"; };
 		9E4B96FC250F9B6B00A97873 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		9E4B96FE250F9F5900A97873 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9E65CDF6250CE8D10067EA82 /* AddCarVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarVIew.swift; sourceTree = "<group>"; };
+		9EADF38425185A6C0009A5BB /* ShopCarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCarCell.swift; sourceTree = "<group>"; };
+		9EADF3862518CD360009A5BB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../realm-swift-5.4.2/ios/swift-12.0/Realm.framework"; sourceTree = "<group>"; };
+		9EADF3872518CD360009A5BB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../realm-swift-5.4.2/ios/swift-12.0/RealmSwift.framework"; sourceTree = "<group>"; };
+		9EADF38D2518D0750009A5BB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../realm-swift-5.4.2/ios/swift-11.3/Realm.framework"; sourceTree = "<group>"; };
+		9EADF38E2518D0750009A5BB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../realm-swift-5.4.2/ios/swift-11.3/RealmSwift.framework"; sourceTree = "<group>"; };
+		9EADF39C2518D95D0009A5BB /* MeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeHeaderCell.swift; sourceTree = "<group>"; };
+		9EADF39D2518D95D0009A5BB /* MeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeHeaderCell.xib; sourceTree = "<group>"; };
+		9EADF3A02518D9690009A5BB /* MeCommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeCommonCell.swift; sourceTree = "<group>"; };
+		9EADF3A12518D9690009A5BB /* MeCommonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeCommonCell.xib; sourceTree = "<group>"; };
 		9EAECDF02509CE4E0067D827 /* DetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderCell.swift; sourceTree = "<group>"; };
 		9EAECDF12509CE4E0067D827 /* DetailHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailHeaderCell.xib; sourceTree = "<group>"; };
 		9EAECDF42509CE620067D827 /* DetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCell.swift; sourceTree = "<group>"; };
@@ -180,9 +198,22 @@
 		5D79FB8A0E08D46F622FA92C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9EADF3862518CD360009A5BB /* Realm.framework */,
+				9EADF3872518CD360009A5BB /* RealmSwift.framework */,
+				9EADF38D2518D0750009A5BB /* Realm.framework */,
+				9EADF38E2518D0750009A5BB /* RealmSwift.framework */,
 				0CF649F144922A31B2F5148D /* Pods_ShopProject.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E3325C82519A46E004F62AB /* 数据库 */ = {
+			isa = PBXGroup;
+			children = (
+				9E3325DA251AE16C004F62AB /* WCDManager.swift */,
+				9E3325DC251AE181004F62AB /* GoodItem.swift */,
+			);
+			path = "数据库";
 			sourceTree = "<group>";
 		};
 		9E4B96F9250F9ABE00A97873 /* 网络 */ = {
@@ -313,6 +344,7 @@
 		9ECFD2632500977600D8D520 /* Librartys */ = {
 			isa = PBXGroup;
 			children = (
+				9E3325C82519A46E004F62AB /* 数据库 */,
 				9E4B96F9250F9ABE00A97873 /* 网络 */,
 				9ECFD2642500979400D8D520 /* WRNavigationBar */,
 			);
@@ -380,6 +412,7 @@
 		9ECFD2802500E43300D8D520 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9EADF38425185A6C0009A5BB /* ShopCarCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -409,6 +442,10 @@
 		9ECFD2842500E46200D8D520 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9EADF39C2518D95D0009A5BB /* MeHeaderCell.swift */,
+				9EADF39D2518D95D0009A5BB /* MeHeaderCell.xib */,
+				9EADF3A02518D9690009A5BB /* MeCommonCell.swift */,
+				9EADF3A12518D9690009A5BB /* MeCommonCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -602,8 +639,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EADF39F2518D95D0009A5BB /* MeHeaderCell.xib in Resources */,
 				9EC1E5832508643F00025265 /* RecomondCell.xib in Resources */,
 				9ECFD22C2500852E00D8D520 /* LaunchScreen.storyboard in Resources */,
+				9EADF3A32518D9690009A5BB /* MeCommonCell.xib in Resources */,
 				9EC1E5872508695300025265 /* RecomondCollectionViewCell.xib in Resources */,
 				9ECFD2292500852E00D8D520 /* Assets.xcassets in Resources */,
 				9EB39102250A1DBF00ED86E9 /* LeftCell.xib in Resources */,
@@ -681,6 +720,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EADF39E2518D95D0009A5BB /* MeHeaderCell.swift in Sources */,
 				9ECFD26E2500979500D8D520 /* WRCycleScrollView.swift in Sources */,
 				9ECFD27825009E9700D8D520 /* YYBasicContentView.swift in Sources */,
 				9ECFD26C2500979500D8D520 /* WRCustomNavigationBar.swift in Sources */,
@@ -710,6 +750,8 @@
 				9ECFD2562500860900D8D520 /* LTSuperViewController.swift in Sources */,
 				9ECFD28D2501C91800D8D520 /* HomeProvider.swift in Sources */,
 				9ECFD27A2500BD4000D8D520 /* SceneDelegate.swift in Sources */,
+				9EADF38525185A6C0009A5BB /* ShopCarCell.swift in Sources */,
+				9EADF3A22518D9690009A5BB /* MeCommonCell.swift in Sources */,
 				9ECFD2242500852900D8D520 /* ViewController.swift in Sources */,
 				9EF5B091250B06E00005132A /* RightTopCell.swift in Sources */,
 				9EC1E5932508BB6C00025265 /* BannerView.swift in Sources */,
@@ -719,6 +761,8 @@
 				9ECFD27625009E9700D8D520 /* YYBouncesContentView.swift in Sources */,
 				9ECFD25A2500863500D8D520 /* CategoryViewController.swift in Sources */,
 				9EC1E5952508D55500025265 /* GoodDetailVC.swift in Sources */,
+				9E3325DD251AE181004F62AB /* GoodItem.swift in Sources */,
+				9E3325DB251AE16C004F62AB /* WCDManager.swift in Sources */,
 				9EC1E58C2508AC8100025265 /* CateTableViewCell.swift in Sources */,
 				9EBEB97F2507ADBC004F5389 /* HomeHeaderView.swift in Sources */,
 				9ECFD2712500984800D8D520 /* Const.swift in Sources */,

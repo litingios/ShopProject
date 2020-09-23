@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MeCommonCell" customModule="ShopProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wodedingdan-2" translatesAutoresizingMaskIntoConstraints="NO" id="Ioa-nT-lb6">
+                        <rect key="frame" x="15" y="15" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="3tX-FX-KFX"/>
+                            <constraint firstAttribute="width" constant="20" id="izV-IH-KPQ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="领取优惠券" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIl-Jn-9a9">
+                        <rect key="frame" x="50" y="15" width="255" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="NnY-Ki-JrS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ioa-nT-lb6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="5so-R5-0xl"/>
+                    <constraint firstItem="aIl-Jn-9a9" firstAttribute="centerY" secondItem="Ioa-nT-lb6" secondAttribute="centerY" id="H1Q-Wc-dyz"/>
+                    <constraint firstItem="Ioa-nT-lb6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="e7N-ki-taN"/>
+                    <constraint firstAttribute="trailing" secondItem="aIl-Jn-9a9" secondAttribute="trailing" constant="15" id="mXi-84-1rH"/>
+                    <constraint firstItem="aIl-Jn-9a9" firstAttribute="leading" secondItem="Ioa-nT-lb6" secondAttribute="trailing" constant="15" id="rjy-Y1-dws"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imView" destination="Ioa-nT-lb6" id="k9S-6r-Gka"/>
+                <outlet property="nameLab" destination="aIl-Jn-9a9" id="jNk-kj-iG4"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="wodedingdan-2" width="64" height="64"/>
+    </resources>
+</document>

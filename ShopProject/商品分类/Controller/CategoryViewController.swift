@@ -16,6 +16,10 @@ class CategoryViewController: LTSuperViewController {
 
     private var cateArray:[CategoryModel]?
     private var belowList: [GoodsModel]?
+    /// 商品大类id
+    private var mallCategoryId: String = "2c9f6c946cd22d7b016cd74220b70040"
+    /// 商品小类id
+    private var mallSubId: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +27,9 @@ class CategoryViewController: LTSuperViewController {
         self.backBntHidden = true
 
         loadGoodCategory()
-        loadGoodInfoList(categoryId: "2c9f6c946cd22d7b016cd74220b70040", categorySubId: "", page: 1)
+        loadGoodInfoList(categoryId: mallCategoryId, categorySubId: mallSubId, page: 1)
 
+        rightView.delegate = self
         self.view .addSubview(leftView)
         self.view .addSubview(rightView)
         leftView.snp.makeConstraints { (make) in
@@ -41,7 +46,8 @@ class CategoryViewController: LTSuperViewController {
         // 回调
         leftView.backMallCategoryId = {[weak self]
             (model: CategoryModel,index: Int)in
-            
+            self?.mallCategoryId = model.mallCategoryId!
+            self?.mallSubId = ""
             
             // 添加 全部 model
             let mallModel = CategorySmallModel()
@@ -60,6 +66,9 @@ class CategoryViewController: LTSuperViewController {
         
         rightView.backCategorySmallModel = {[weak self]
             (model: CategorySmallModel)in
+            self?.isClear = false
+            self?.mallCategoryId = model.mallCategoryId!
+            self?.mallSubId = model.mallSubId!
             self?.loadGoodInfoList(categoryId: model.mallCategoryId!, categorySubId: model.mallSubId!, page: 1)
         }
         
@@ -83,12 +92,12 @@ class CategoryViewController: LTSuperViewController {
         rightView.backgroundColor = UIColor .white
         return rightView
     }()
-    
+
     
     // 列表数据
     private func loadGoodCategory() -> Void {
         
-        NetWorkRequest(.goodCategory(parameters: [:]), completion: { (responseString) -> (Void) in
+        NetWorkRequest(.goodCategory(parameters: [:]),isCarch: true ,completion: { (responseString) -> (Void) in
             let json = JSON(responseString)
             // 底部列表数据
             if let cateArray = JSONDeserializer<CategoryModel>.deserializeModelArrayFrom(json: json["data"].description) { // 从字符串转换为对象实例
@@ -119,11 +128,24 @@ class CategoryViewController: LTSuperViewController {
     
     
     private func loadGoodInfoList(categoryId: String,categorySubId: String,page: Int) -> Void {
-        NetWorkRequest(.categoryGoodsList(parameters: ["categoryId":categoryId,"categorySubId":categorySubId,"page":page]), completion: { (responseString) -> (Void) in
+        NetWorkRequest(.categoryGoodsList(parameters: ["categoryId":categoryId,"categorySubId":categorySubId,"page":page]),isCarch: true,carchID: "categoryId-\(categoryId)-categorySubId\(categorySubId)-page\(page)" as NSString, completion: { (responseString) -> (Void) in
             let json = JSON(responseString)
+            
             if let cateArray = JSONDeserializer<GoodsModel>.deserializeModelArrayFrom(json: json["data"].description) { // 从字符串转换为对象实例
-            self.belowList = cateArray as? [GoodsModel]
-            self.rightView.belowList = self.belowList
+                
+                if self.isClear == true {
+                    self.belowList = self.belowList! + cateArray as? [GoodsModel]
+                }else{
+                    self.belowList?.removeAll()
+                    self.belowList = cateArray as? [GoodsModel]
+                }
+                self.rightView.belowList = self.belowList
+            }
+            self.rightView.goodsCollectionView.es.stopPullToRefresh()
+            self.rightView.goodsCollectionView.es.stopLoadingMore()
+            if json["data"].count == 0 {
+                self.rightView.goodsCollectionView.es.stopLoadingMore()
+                self.rightView.goodsCollectionView.es.noticeNoMoreData()
             }
             
         }, failed: { (failedResutl) -> (Void) in
@@ -134,3 +156,19 @@ class CategoryViewController: LTSuperViewController {
     }
     
 }
+
+extension CategoryViewController: RightViewDelegate {
+    
+    func rightViewHeaderRereshing() {
+        self.page = 1
+        self.isClear = false
+        self.loadGoodInfoList(categoryId: self.mallCategoryId, categorySubId: self.mallSubId, page: self.page)
+    }
+    
+    func rightViewFooterRereshing() {
+        self.page += 1
+        self.isClear = true
+        self.loadGoodInfoList(categoryId: self.mallCategoryId, categorySubId: self.mallSubId, page: self.page)
+    }
+}
+

@@ -17,12 +17,19 @@ PODS:
   - ObjectMapper (4.2.0)
   - Result (4.1.0)
   - SnapKit (4.2.0)
+  - Spring (1.0.6)
+  - SQLiteRepairKit (1.2.2):
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
   - StreamingKit (0.1.30)
   - SVProgressHUD (2.2.5)
   - SwiftMessages (8.0.2):
     - SwiftMessages/App (= 8.0.2)
   - SwiftMessages/App (8.0.2)
   - SwiftyJSON (5.0.0)
+  - WCDB.swift (1.0.8.2):
+    - SQLiteRepairKit (~> 1.2.0)
+    - WCDBOptimizedSQLCipher (~> 1.2.0)
+  - WCDBOptimizedSQLCipher (1.2.1)
 
 DEPENDENCIES:
   - DNSPageView
@@ -37,10 +44,12 @@ DEPENDENCIES:
   - Moya
   - ObjectMapper
   - SnapKit
+  - Spring (from `https://github.com/MengTo/Spring.git`)
   - StreamingKit
   - SVProgressHUD
   - SwiftMessages
   - SwiftyJSON
+  - WCDB.swift
 
 SPEC REPOS:
   trunk:
@@ -58,10 +67,22 @@ SPEC REPOS:
     - ObjectMapper
     - Result
     - SnapKit
+    - SQLiteRepairKit
     - StreamingKit
     - SVProgressHUD
     - SwiftMessages
     - SwiftyJSON
+    - WCDB.swift
+    - WCDBOptimizedSQLCipher
+
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
+    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -78,11 +99,15 @@ SPEC CHECKSUMS:
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
+  SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   StreamingKit: 70ca8608c206864b4d54a577eacb3c8bf7c72209
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMessages: 633304165351b8e3dcbb81a71f8efcd86f9c1669
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
+  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 9e75f847efaff380fddcb1e3f6ec9c53b428741b
+PODFILE CHECKSUM: 264125642f1a0a117ff678181570a3d19fc463bd
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

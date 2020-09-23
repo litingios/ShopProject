@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import HandyJSON
 import SwiftMessages
-
+import WCDBSwift
 class GoodDetailVC: LTSuperViewController {
     private var goodsModel = GoodsModel()
     private var strArr: [String] = []
@@ -25,9 +25,9 @@ class GoodDetailVC: LTSuperViewController {
     
     
     func creatData(goodId: String) -> Void {
-        
+                
         // 详情数据
-        NetWorkRequest(.goodDetail(parameters: ["goodId":goodId]), completion: { (responseString) -> (Void) in
+        NetWorkRequest(.goodDetail(parameters: ["goodId":goodId]),isCarch: true ,carchID:"goodId-\(goodId)" as NSString,  completion: { (responseString) -> (Void) in
             // 轮播图数据
             let json = JSON(responseString)
             // 底部列表数据
@@ -76,7 +76,10 @@ class GoodDetailVC: LTSuperViewController {
         self.navigationItem.title = "商品详情"
         
         self.view .addSubview(self.tableView)
+        self.addView.delegate = self
+        self.addView.goodsID = self.goodsID
         self.view .addSubview(self.addView)
+        
         self.addView.snp.makeConstraints { (make) in
             make.left.right.equalTo(0)
             make.bottom.equalToSuperview()
@@ -169,3 +172,40 @@ extension GoodDetailVC:UITableViewDelegate,UITableViewDataSource {
     
 }
 
+extension GoodDetailVC: AddCarVIewDelegate {
+    
+    /// 加入购物车
+    func addCarMethod(goodCount: Int) {
+        
+        let item = GoodItem.init()
+        item.goodsId = self.goodsID
+        item.goodsName = self.goodsModel.goodsName
+        item.goodsCount = goodCount
+        item.oriPrice = self.goodsModel.oriPrice
+        item.presentPrice = self.goodsModel.presentPrice
+        item.image1 = self.goodsModel.image1
+        item.isSelect = false
+        let itemArr = [item]
+        let properties = [
+            GoodItem.Properties.goodsId,
+            GoodItem.Properties.goodsName,
+            GoodItem.Properties.goodsCount,
+            GoodItem.Properties.oriPrice,
+            GoodItem.Properties.presentPrice,
+            GoodItem.Properties.isSelect,
+            GoodItem.Properties.image1,
+        ]
+        if goodCount > 1 {
+            WCDManager.share.update(fromTable: DBTableName.sampleTable, on: properties, itemModel: item, where: GoodItem.Properties.goodsId == String(self.goodsID!))
+        }else{
+            WCDManager.share.inser(objects: itemArr, intoTable: DBTableName.sampleTable)
+        }
+        
+    }
+    
+    /// 立即购买
+    func buyGoodsMethod() {
+        
+    }
+    
+}

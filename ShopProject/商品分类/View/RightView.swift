@@ -7,12 +7,41 @@
 //
 
 import UIKit
+import ESPullToRefresh
+
+/// 代理
+public protocol RightViewDelegate : NSObjectProtocol {
+    func rightViewHeaderRereshing()
+    func rightViewFooterRereshing()
+}
 
 class RightView: UIView {
 
+    weak var delegate: RightViewDelegate?
     var backCategorySmallModel: ((CategorySmallModel) ->())?
     var backGoodId: ((String) ->())?
 
+    //修改 下拉 上拉刷新 文字提示
+    var header: ESRefreshHeaderAnimator {
+        get {
+            let h = ESRefreshHeaderAnimator.init(frame: CGRect.zero)
+            h.pullToRefreshDescription = "下拉刷新"
+            h.releaseToRefreshDescription = "松开获取最新数据"
+            h.loadingDescription = "下拉刷新..."
+            return h
+        }
+    }
+    
+    var footer: ESRefreshFooterAnimator {
+        get {
+            let f = ESRefreshFooterAnimator.init(frame: CGRect.zero)
+            f.loadingMoreDescription = "上拉加载更多"
+            f.noMoreDataDescription = "数据已加载完"
+            f.loadingDescription = "加载更多..."
+            return f
+        }
+    }
+    
     var topArray: [CategorySmallModel]? = [] {
         didSet{
             guard topArray != nil else {return}
@@ -86,8 +115,29 @@ class RightView: UIView {
         goodsCollectionView.showsVerticalScrollIndicator = false
         goodsCollectionView.showsHorizontalScrollIndicator = false
         goodsCollectionView.register(UINib.init(nibName: "GoodsCell", bundle: nil), forCellWithReuseIdentifier: "GoodsCell")
+        // 下拉刷新
+        goodsCollectionView.es.addPullToRefresh(animator: header, handler: {
+            [unowned self] in
+            self.headerRereshing()
+        });
+        
+        // 上拉加载
+        goodsCollectionView.es.addInfiniteScrolling(animator: footer) {
+            [unowned self] in
+            self.footerRereshing()
+        }
+
         return goodsCollectionView
     }()
+    
+    func headerRereshing() {
+        delegate?.rightViewHeaderRereshing()
+    }
+    
+    /// 上拉加载
+    func footerRereshing() {
+        delegate?.rightViewFooterRereshing()
+    }
     
 }
 

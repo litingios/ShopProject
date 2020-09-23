@@ -69,7 +69,7 @@ class HomeViewController: LTSuperViewController {
         
     private func loadSlidesListData() {
         // 首页列表数据
-        NetWorkRequest(.homeGoodsList(parameters: ["lon":"116.47118377685547","lat":"39.91233444213867"]), completion: { (responseString) -> (Void) in
+        NetWorkRequest(.homeGoodsList(parameters: ["lon":"116.47118377685547","lat":"39.91233444213867"]),isCarch: true, completion: { (responseString) -> (Void) in
             // 轮播图数据
             let json = JSON(responseString)
 
@@ -144,7 +144,7 @@ class HomeViewController: LTSuperViewController {
     // 列表数据
     private func loadBelowListData() -> Void {
         // 首页列表数据
-        NetWorkRequest(.homePageBelowConten(parameters: ["page":self.page]), completion: { (responseString) -> (Void) in
+        NetWorkRequest(.homePageBelowConten(parameters: ["page":self.page]),isCarch: true,carchID: "page-\(page)" as NSString, completion: { (responseString) -> (Void) in
             // 轮播图数据
             let json = JSON(responseString)
             if json["data"].count == 0 {

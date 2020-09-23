@@ -73,17 +73,7 @@ class ActivityTableViewCell: UITableViewCell {
         return imageThreeView
     }()
     
-//    private lazy var lineLable01: UILabel = {
-//       let lineLable01 = UILabel()
-//        lineLable01.backgroundColor = BackViewColor
-//        return lineLable01
-//    }()
-//
-//    private lazy var lineLable02: UILabel = {
-//        let lineLable02 = UILabel()
-//        lineLable02.backgroundColor = BackViewColor
-//        return lineLable02
-//    }()
+
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
