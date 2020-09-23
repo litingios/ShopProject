@@ -71,6 +71,8 @@ class ShopCarViewController: LTSuperViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.allPriceLab.text = "￥ 0.0"
+        self.selectAllBtn.isSelected = false
         headerRereshing()
     }
     
@@ -146,12 +148,13 @@ class ShopCarViewController: LTSuperViewController {
         /// 相加选中商品价钱 * selectItem.presentPrice
         var allPrice: Float = 0
         for selectItem in self.goodsList! {
-             selectItem.isSelect = !selectItem.isSelect
+             selectItem.isSelect = self.selectAllBtn.isSelected
             if selectItem.isSelect == true {
                 let presentPrice: Float = Float(selectItem.presentPrice!)!
                 allPrice += Float(selectItem.goodsCount)*presentPrice
             }
         }
+        
         self.allPriceLab.text = "￥ \(allPrice)"
         self.tableView .reloadData()
     }
@@ -222,7 +225,9 @@ extension ShopCarViewController:UITableViewDelegate,UITableViewDataSource{
             }
         }
         self.allPriceLab.text = "￥ \(allPrice)"
-        
+        if allPrice == 0 {
+            self.selectAllBtn.isSelected = false
+        }
     }
     
 }

@@ -38,7 +38,7 @@ class GoodItem: NSObject,TableCodable {
         case isSelect
         case presentPrice
         case addCount
-
+    
         //Column constraints for primary key, unique, not null, default value and so on. It is optional.
         static var columnConstraintBindings: [CodingKeys: ColumnConstraintBinding]? {
             return [
