@@ -23,7 +23,6 @@ enum HomeGoodsAPI {
 
 }
 
-
 // 遵循 TargetType 代理 实现方法
 extension HomeGoodsAPI: TargetType {
     //服务器地址
@@ -71,9 +70,4 @@ extension HomeGoodsAPI: TargetType {
     }
     var headers: [String : String]? { return nil }
 
-    //是否显示转圈提示
-    var show: Bool {
-        return self.show
-    }
-    
 }

@@ -25,12 +25,11 @@ var parmeterStr: String = ""
 
 /// 网络请求的基本设置,这里可以拿到是具体的哪个网络请求，可以在这里做一些设置
 private let myEndpointClosure = { (target: API) -> Endpoint in
-    /// 这里把endpoint重新构造一遍主要为了解决网络请求地址里面含有? 时无法解析的bug https://github.com/Moya/Moya/issues/1198
+    /// 这里把endpoint重新构造一遍主要为了解决网络请求地址里面含有? 时无法解析的bug
     let url = target.baseURL.absoluteString + target.path
     var task = target.task
     /*
      如果需要在每个请求中都添加类似token参数的参数请取消注释下面代码
-     👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇
      */
 //    let additionalParameters = ["token":"888888"]
 //    let defaultEncoding = URLEncoding.default
@@ -45,7 +44,6 @@ private let myEndpointClosure = { (target: API) -> Endpoint in
 //        break
 //    }
     /*
-     👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆👆
      如果需要在每个请求中都添加类似token参数的参数请取消注释上面代码
      */
 
@@ -141,7 +139,6 @@ private let networkPlugin = NetworkActivityPlugin.init { changeType, _ in
     }
 }
 
-// https://github.com/Moya/Moya/blob/master/docs/Providers.md  参数使用说明
 // stubClosure   用来延时发送网络请求
 
 /// /网络请求发送的核心初始化方法，创建网络请求对象
@@ -179,8 +176,10 @@ func NetWorkRequest(_ target: API, completion: @escaping successCallback, failed
 ///   - failed: 失败
 ///   - error: 错误
 @discardableResult // 当我们需要主动取消网络请求的时候可以用返回值Cancellable, 一般不用的话做忽略处理
-/// isCarch 是否需要缓存，默认true
-/// 缓存参数
+
+/// target HomeProvider 对象
+/// isCarch 是否需要缓存，默认false
+/// carchID 缓存参数
 func NetWorkRequest(_ target: API, isCarch: Bool = false, carchID: NSString = "", completion: @escaping successCallback, failed: failedCallback?, errorResult: errorCallback?) -> Cancellable? {
     
     // 先判断网络是否有链接 没有的话直接返回--代码略

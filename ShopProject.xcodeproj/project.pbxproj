@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9E3325DB251AE16C004F62AB /* WCDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3325DA251AE16C004F62AB /* WCDManager.swift */; };
 		9E3325DD251AE181004F62AB /* GoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3325DC251AE181004F62AB /* GoodItem.swift */; };
+		9E3325E3251C423D004F62AB /* MTRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3325E2251C423D004F62AB /* MTRefreshHeaderAnimator.swift */; };
 		9E4B96FB250F9AEA00A97873 /* MoyaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B96FA250F9AEA00A97873 /* MoyaConfig.swift */; };
 		9E4B96FD250F9B6B00A97873 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B96FC250F9B6B00A97873 /* APIProvider.swift */; };
 		9E4B96FF250F9F5900A97873 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B96FE250F9F5900A97873 /* NetworkManager.swift */; };
@@ -96,6 +97,7 @@
 		25B1AD900A341812D20863B2 /* Pods-ShopProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopProject.debug.xcconfig"; path = "Target Support Files/Pods-ShopProject/Pods-ShopProject.debug.xcconfig"; sourceTree = "<group>"; };
 		9E3325DA251AE16C004F62AB /* WCDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCDManager.swift; sourceTree = "<group>"; };
 		9E3325DC251AE181004F62AB /* GoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodItem.swift; sourceTree = "<group>"; };
+		9E3325E2251C423D004F62AB /* MTRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
 		9E4B96FA250F9AEA00A97873 /* MoyaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaConfig.swift; sourceTree = "<group>"; };
 		9E4B96FC250F9B6B00A97873 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		9E4B96FE250F9F5900A97873 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -216,6 +218,14 @@
 			path = "数据库";
 			sourceTree = "<group>";
 		};
+		9E3325E4251C4247004F62AB /* 自定义下拉刷新 */ = {
+			isa = PBXGroup;
+			children = (
+				9E3325E2251C423D004F62AB /* MTRefreshHeaderAnimator.swift */,
+			);
+			path = "自定义下拉刷新";
+			sourceTree = "<group>";
+		};
 		9E4B96F9250F9ABE00A97873 /* 网络 */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +339,7 @@
 		9ECFD254250085E600D8D520 /* Mian */ = {
 			isa = PBXGroup;
 			children = (
+				9E3325E4251C4247004F62AB /* 自定义下拉刷新 */,
 				9ECFD27225009E9700D8D520 /* TabBarView */,
 				9ECFD21F2500852900D8D520 /* AppDelegate.swift */,
 				9ECFD2792500BD4000D8D520 /* SceneDelegate.swift */,
@@ -763,6 +774,7 @@
 				9ECFD25A2500863500D8D520 /* CategoryViewController.swift in Sources */,
 				9EC1E5952508D55500025265 /* GoodDetailVC.swift in Sources */,
 				9E3325DD251AE181004F62AB /* GoodItem.swift in Sources */,
+				9E3325E3251C423D004F62AB /* MTRefreshHeaderAnimator.swift in Sources */,
 				9E3325DB251AE16C004F62AB /* WCDManager.swift in Sources */,
 				9EC1E58C2508AC8100025265 /* CateTableViewCell.swift in Sources */,
 				9EBEB97F2507ADBC004F5389 /* HomeHeaderView.swift in Sources */,

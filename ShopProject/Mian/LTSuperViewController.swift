@@ -87,31 +87,30 @@ class LTSuperViewController: UIViewController {
     lazy var collectionView : UICollectionView = {
         layout = UICollectionViewFlowLayout.init()
         let collectionView = UICollectionView.init(frame:.zero, collectionViewLayout: layout)
-//        layout.headerReferenceSize = CGSize(width: ScreenWidth, height: 1935)
-        
         if #available(iOS 11.0,*){
             collectionView.contentInsetAdjustmentBehavior = .never
             collectionView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 49, right: 0)
             collectionView.scrollIndicatorInsets = collectionView.contentInset
         }
-        
+       
         collectionView.backgroundColor = UIColor .white
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
+        
         // 下拉刷新
         collectionView.es.addPullToRefresh(animator: header, handler: {
             [unowned self] in
-            
+
             self.headerRereshing()
 //            self.page = 1
 //            self.isClear = false
 //            self.loadSlidesListData()
 //            self.loadBelowListData()
-            /// 在这里做刷新相关事件
-            /// ...
-            /// 如果你的刷新事件成功，设置completion自动重置footer的状态
+//            / 在这里做刷新相关事件
+//            / ...
+//            / 如果你的刷新事件成功，设置completion自动重置footer的状态
 //            self.collectionView.es.stopPullToRefresh()
-            /// 设置ignoreFooter来处理不需要显示footer的情况
+//            / 设置ignoreFooter来处理不需要显示footer的情况
 //            self.collectionView.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: true)
         });
         
@@ -123,12 +122,12 @@ class LTSuperViewController: UIViewController {
 //            self.isClear = true
 //            self.loadBelowListData()
 
-            /// 在这里做加载更多相关事件
-            /// ...
-            /// 如果你的加载更多事件成功，调用es_stopLoadingMore()重置footer状态
-    //            self.collectionView.es.stopLoadingMore()
-    //            /// 通过es_noticeNoMoreData()设置footer暂无数据状态
-    //            self.collectionView.es.noticeNoMoreData()
+//            /// 在这里做加载更多相关事件
+//            /// ...
+//            /// 如果你的加载更多事件成功，调用es_stopLoadingMore()重置footer状态
+//            self.collectionView.es.stopLoadingMore()
+//            /// 通过es_noticeNoMoreData()设置footer暂无数据状态
+//            self.collectionView.es.noticeNoMoreData()
         }
         return collectionView
     }()

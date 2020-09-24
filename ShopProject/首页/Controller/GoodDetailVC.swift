@@ -12,6 +12,9 @@ import SwiftyJSON
 import HandyJSON
 import SwiftMessages
 import WCDBSwift
+import ESPullToRefresh
+
+
 class GoodDetailVC: LTSuperViewController {
     private var goodsModel = GoodsModel()
     private var strArr: [String] = []
@@ -90,6 +93,12 @@ class GoodDetailVC: LTSuperViewController {
             make.bottom.equalTo(self.addView.snp.top).offset(0)
         }
         
+        var header: ESRefreshProtocol & ESRefreshAnimatorProtocol
+        header = MTRefreshHeaderAnimator.init(frame: CGRect.zero)
+        self.tableView.es.addPullToRefresh(animator: header) { [weak self] in
+            self?.headerRereshing()
+        }
+        tableView.expiredTimeInterval = 20.0
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.delegate = self
         tableView.dataSource = self
@@ -100,7 +109,9 @@ class GoodDetailVC: LTSuperViewController {
     
     override func headerRereshing() {
         creatData(goodId: goodsID!)
-        self.tableView.es.stopPullToRefresh()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0) {
+            self.tableView.es.stopPullToRefresh()
+        }
     }
     
 }

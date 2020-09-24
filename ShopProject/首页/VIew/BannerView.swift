@@ -17,19 +17,39 @@ class BannerView: UIView {
     var slidesList: [SlidesModel]?{
         didSet{
             guard slidesList != nil else {return}
+            self.pagerControl.numberOfPages = self.slidesList!.count
             self.pagerView.reloadData()
         }
     }
 
     // 懒加载滚动图片浏览器
     private lazy var pagerView : FSPagerView = {
+        
+        /*
+         case crossFading
+         case zoomOut
+         case depth
+         case overlap
+         case linear
+         case coverFlow
+         case ferrisWheel
+         case invertedFerrisWheel
+         case cubic
+         */
         let pagerView = FSPagerView()
         pagerView.delegate = self
         pagerView.dataSource = self
         pagerView.automaticSlidingInterval =  3
         pagerView.isInfinite = !pagerView.isInfinite
+        
+//        pagerView.interitemSpacing = 30
+//        pagerView.itemSize = CGSize.init(width: ScreenWidth - 60, height: 140)
+//        pagerView.transformer = FSPagerViewTransformer(type: .overlap)
+        
         pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "ShopBannerCell")
         return pagerView
+        
+               
     }()
     
     // 懒加载滚动图片浏下标
@@ -68,7 +88,7 @@ class BannerView: UIView {
             make.left.top.right.equalToSuperview()
             make.height.equalToSuperview()
         }
-        
+
         self.pagerControl.snp.makeConstraints { (make) in
             make.width.equalTo(80)
             make.height.equalTo(30)
@@ -89,7 +109,6 @@ class BannerView: UIView {
 extension BannerView: FSPagerViewDelegate, FSPagerViewDataSource {
     // - FSPagerView Delegate
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        self.pagerControl.numberOfPages = self.slidesList?.count ?? 0
         return self.slidesList?.count ?? 0
     }
     

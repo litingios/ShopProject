@@ -73,7 +73,7 @@ class HomeViewController: LTSuperViewController {
             // 轮播图数据
             let json = JSON(responseString)
 
-                 // 轮播图数据
+           // 轮播图数据
            if let slidesList = JSONDeserializer<SlidesModel>.deserializeModelArrayFrom(json: json["data"]["slides"].description) { // 从字符串转换为对象实例
                self.slidesList = slidesList as? [SlidesModel]
            }
@@ -129,9 +129,10 @@ class HomeViewController: LTSuperViewController {
     
             UIView .performWithoutAnimation {
                 self.collectionView .reloadData()
+                self.collectionView.es.stopPullToRefresh()
+                self.collectionView.es.stopLoadingMore()
             }
-            self.collectionView.es.stopPullToRefresh()
-            self.collectionView.es.stopLoadingMore()
+            
 
         }, failed: { (failedResutl) -> (Void) in
             print("服务器返回code不为0000啦~\(failedResutl)")
@@ -162,10 +163,10 @@ class HomeViewController: LTSuperViewController {
                 }
                 UIView .performWithoutAnimation {
                     self.collectionView .reloadData()
+                    self.collectionView.es.stopPullToRefresh()
+                    self.collectionView.es.stopLoadingMore()
                 }
-                self.collectionView.es.stopPullToRefresh()
-                self.collectionView.es.stopLoadingMore()
-
+                
             }
         }, failed: { (failedResutl) -> (Void) in
             print("服务器返回code不为0000啦~\(failedResutl)")
