@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tab
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
+        application.isStatusBarHidden = false
         return true
     }
 
