@@ -7,7 +7,12 @@
 ##### 本项目仅供Swift开发新手学习和借鉴，大神轻喷😁。
 #### 项目截图如下
 
-/Users/liting/Desktop/SwiftShopProject/resource/个人中心.gif
-/Users/liting/Desktop/SwiftShopProject/resource/购物车.gif
-/Users/liting/Desktop/SwiftShopProject/resource/商品分类.gif
-/Users/liting/Desktop/SwiftShopProject/resource/首页.gif
+![首页](https://github.com/litingios/ShopProject/blob/master/resource/首页.gif)
+![商品分类](https://github.com/litingios/ShopProject/blob/master/resource/商品分类.gif)
+![购物车](https://github.com/litingios/ShopProject/blob/master/resource/购物车.gif)
+![个人中心](https://github.com/litingios/ShopProject/blob/master/resource/个人中心.gif)
+
+#### 声明:
+
+##### 仅开源供大家学习使用，禁止从事商业活动，如出现一切法律问题自行承担！！！
+##### 仅学习使用,如有侵权,造成影响,请联系本人删除,谢谢
