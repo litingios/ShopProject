@@ -91,7 +91,10 @@ class ShopCarViewController: LTSuperViewController {
             make.bottom.equalToSuperview().offset(-(tabBarHeight+60))
         }
         creatBottowView()
+        
+        setNoDataViewElement(name: "qicheqianlian", title: "", des: "您还有添加购物车商品")
     }
+    
     
     override func headerRereshing() {
         

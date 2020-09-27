@@ -96,13 +96,13 @@ class AddCarVIew: UIView {
         self.addBtn.snp.makeConstraints { (make) in
             make.left.equalTo(self.leftView.snp.right).offset(15)
             make.top.height.equalToSuperview()
-            make.width.equalTo((ScreenWidth-60)/2)
+            make.width.equalTo((ScreenWidth-55)/2)
         }
         
         self.buyBtn.snp.makeConstraints { (make) in
             make.left.equalTo(self.addBtn.snp.right).offset(0)
             make.top.height.equalToSuperview()
-            make.width.equalTo((ScreenWidth-60)/2)
+            make.width.equalTo((ScreenWidth-55)/2)
         }
                 
     }

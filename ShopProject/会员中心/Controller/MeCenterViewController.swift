@@ -17,7 +17,7 @@ class MeCenterViewController: LTSuperViewController {
 
         self.view.backgroundColor = BackViewColor
         
-        self.tableView.backgroundColor = MainColor
+        self.tableView.backgroundColor = BackViewColor
         self.tableView.es.removeRefreshFooter()
         self.tableView.es.removeRefreshHeader()
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
@@ -30,7 +30,6 @@ class MeCenterViewController: LTSuperViewController {
            make.top.left.right.equalToSuperview()
            make.bottom.equalToSuperview().offset(0)
        }
-        
         creatData()
         
     }
@@ -109,6 +108,12 @@ extension MeCenterViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if indexPath.section == 1 {
+            if indexPath.row == 2{
+                let view = ShowAddressResultVC()
+                self.navigationController?.pushViewController(view, animated: true)
+            }
+        }
     }
     
 }

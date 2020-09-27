@@ -24,5 +24,6 @@ use_frameworks!
 #    pod 'Realm'
 #    pod 'GRDB.swift'
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+    pod 'DZNEmptyDataSet'
     pod 'WCDB.swift'
 end

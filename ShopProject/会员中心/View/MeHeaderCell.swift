@@ -17,6 +17,7 @@ class MeHeaderCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
+        self.selectionStyle = UITableViewCell.SelectionStyle.none
         self.backView.backgroundColor = MainColor
         self.selectionStyle = UITableViewCell.SelectionStyle.none
         self.lineLab.backgroundColor = BackViewColor
@@ -25,7 +26,6 @@ class MeHeaderCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
 }

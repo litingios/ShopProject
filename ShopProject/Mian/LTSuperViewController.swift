@@ -8,10 +8,31 @@
 
 import UIKit
 import ESPullToRefresh
-
+import DZNEmptyDataSet
 
 class LTSuperViewController: UIViewController {
     
+    /// 全局 layout
+    var layout = UICollectionViewFlowLayout()
+    /// page
+    var page: Int = 1
+    /// 返回按钮是否隐藏 true隐藏
+    var backBntHidden: Bool = false
+    /// 是否清空数组
+    var isClear: Bool = false
+    /// 站位图片
+    var noImageName: String = ""
+    /// 站位标题
+    var noTitle: String = ""
+    /// 站位描述
+    var noDes: String = ""
+    /// 设置站位图
+    func setNoDataViewElement(name: String = "icon_pull_animation_4",title: String = "提示",des: String = "您还没有添加购物车") -> Void {
+        self.noImageName = name
+        self.noTitle = title
+        self.noDes = des
+    }
+
     //修改 下拉 上拉刷新 文字提示
     var header: ESRefreshHeaderAnimator {
         get {
@@ -33,32 +54,10 @@ class LTSuperViewController: UIViewController {
         }
     }
     
-    // 全局 layout
-    var layout = UICollectionViewFlowLayout()
-    // page
-    var page: Int = 1
-    // 返回按钮是否隐藏 true隐藏
-    var backBntHidden: Bool = false
-    // 是否清空数组
-    var isClear: Bool = false
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = BackViewColor
-
-        
-//        // 返回按钮
-//        let item = UIBarButtonItem.init(customView: leftBtn)
-//        self.navigationItem.leftBarButtonItem = item
-//
-//        if backBntHidden == true {
-//            self.navigationItem.hidesBackButton = true;
-//            let NULLBar = UIBarButtonItem.init(customView: UIView())
-//            self.navigationItem.leftBarButtonItem = NULLBar;
-//        }
-        
     }
             
     
@@ -135,12 +134,14 @@ class LTSuperViewController: UIViewController {
     
     lazy var tableView : UITableView = {
         let tableView = UITableView.init(frame:.zero, style: UITableView.Style.plain)
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
         tableView.backgroundColor = UIColor .white
         tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
         tableView.estimatedRowHeight = 0
         tableView.estimatedSectionFooterHeight = 0
         tableView.estimatedSectionHeaderHeight = 0
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
         if #available(iOS 11.0,*){
             tableView.contentInsetAdjustmentBehavior = .never
@@ -174,4 +175,31 @@ class LTSuperViewController: UIViewController {
     }
 
 }
+
+
+extension LTSuperViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
+    
+    /// 返回图片
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage.init(named: noImageName)
+    }
+
+    /// 返回标题文字
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let nameStr : NSMutableAttributedString = NSMutableAttributedString(string:noTitle as String, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16.0),NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        return nameStr
+    }
+    
+    /// 返回文字详情
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center
+        let nameStr: NSAttributedString = NSAttributedString(string: noDes, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0),NSAttributedString.Key.foregroundColor: UIColor.lightGray,NSAttributedString.Key.paragraphStyle:paragraph])
+        return nameStr
+    }
+    
+}
+
+
 

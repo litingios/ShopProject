@@ -10,10 +10,21 @@
 		9E3325DB251AE16C004F62AB /* WCDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3325DA251AE16C004F62AB /* WCDManager.swift */; };
 		9E3325DD251AE181004F62AB /* GoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3325DC251AE181004F62AB /* GoodItem.swift */; };
 		9E3325E3251C423D004F62AB /* MTRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3325E2251C423D004F62AB /* MTRefreshHeaderAnimator.swift */; };
+		9E3325E6251C94F5004F62AB /* AddAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3325E5251C94F5004F62AB /* AddAddressVC.swift */; };
+		9E3325E8251C9519004F62AB /* ShowAddressResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3325E7251C9519004F62AB /* ShowAddressResultVC.swift */; };
+		9E4B8C96251CC70B00EF41E0 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B8C95251CC70B00EF41E0 /* AddressModel.swift */; };
+		9E4B8C98251D9F0700EF41E0 /* AddAddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B8C97251D9F0700EF41E0 /* AddAddressCell.swift */; };
+		9E4B8C9C251DCC6200EF41E0 /* PromptlyBuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B8C9B251DCC6200EF41E0 /* PromptlyBuyVC.swift */; };
+		9E4B8C9F251DCDD700EF41E0 /* BuyHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B8C9D251DCDD700EF41E0 /* BuyHeaderCell.swift */; };
+		9E4B8CA0251DCDD700EF41E0 /* BuyHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E4B8C9E251DCDD700EF41E0 /* BuyHeaderCell.xib */; };
+		9E4B8CA3251DCDE800EF41E0 /* BuyMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B8CA1251DCDE800EF41E0 /* BuyMainCell.swift */; };
+		9E4B8CA4251DCDE800EF41E0 /* BuyMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E4B8CA2251DCDE800EF41E0 /* BuyMainCell.xib */; };
 		9E4B96FB250F9AEA00A97873 /* MoyaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B96FA250F9AEA00A97873 /* MoyaConfig.swift */; };
 		9E4B96FD250F9B6B00A97873 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B96FC250F9B6B00A97873 /* APIProvider.swift */; };
 		9E4B96FF250F9F5900A97873 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B96FE250F9F5900A97873 /* NetworkManager.swift */; };
 		9E65CDF7250CE8D10067EA82 /* AddCarVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E65CDF6250CE8D10067EA82 /* AddCarVIew.swift */; };
+		9EA6A88E252031E0000A29AC /* UINavigationBar+YHIndicatorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6A88A252031E0000A29AC /* UINavigationBar+YHIndicatorImage.m */; };
+		9EA6A88F252031E0000A29AC /* UINavigationController+YHBackTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6A88D252031E0000A29AC /* UINavigationController+YHBackTitle.m */; };
 		9EADF38525185A6C0009A5BB /* ShopCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EADF38425185A6C0009A5BB /* ShopCarCell.swift */; };
 		9EADF39E2518D95D0009A5BB /* MeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EADF39C2518D95D0009A5BB /* MeHeaderCell.swift */; };
 		9EADF39F2518D95D0009A5BB /* MeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EADF39D2518D95D0009A5BB /* MeHeaderCell.xib */; };
@@ -98,10 +109,23 @@
 		9E3325DA251AE16C004F62AB /* WCDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCDManager.swift; sourceTree = "<group>"; };
 		9E3325DC251AE181004F62AB /* GoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodItem.swift; sourceTree = "<group>"; };
 		9E3325E2251C423D004F62AB /* MTRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
+		9E3325E5251C94F5004F62AB /* AddAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressVC.swift; sourceTree = "<group>"; };
+		9E3325E7251C9519004F62AB /* ShowAddressResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAddressResultVC.swift; sourceTree = "<group>"; };
+		9E4B8C95251CC70B00EF41E0 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		9E4B8C97251D9F0700EF41E0 /* AddAddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressCell.swift; sourceTree = "<group>"; };
+		9E4B8C9B251DCC6200EF41E0 /* PromptlyBuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptlyBuyVC.swift; sourceTree = "<group>"; };
+		9E4B8C9D251DCDD700EF41E0 /* BuyHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHeaderCell.swift; sourceTree = "<group>"; };
+		9E4B8C9E251DCDD700EF41E0 /* BuyHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyHeaderCell.xib; sourceTree = "<group>"; };
+		9E4B8CA1251DCDE800EF41E0 /* BuyMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyMainCell.swift; sourceTree = "<group>"; };
+		9E4B8CA2251DCDE800EF41E0 /* BuyMainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyMainCell.xib; sourceTree = "<group>"; };
 		9E4B96FA250F9AEA00A97873 /* MoyaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaConfig.swift; sourceTree = "<group>"; };
 		9E4B96FC250F9B6B00A97873 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		9E4B96FE250F9F5900A97873 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9E65CDF6250CE8D10067EA82 /* AddCarVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarVIew.swift; sourceTree = "<group>"; };
+		9EA6A88A252031E0000A29AC /* UINavigationBar+YHIndicatorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+YHIndicatorImage.m"; sourceTree = "<group>"; };
+		9EA6A88B252031E0000A29AC /* UINavigationController+YHBackTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+YHBackTitle.h"; sourceTree = "<group>"; };
+		9EA6A88C252031E0000A29AC /* UINavigationBar+YHIndicatorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+YHIndicatorImage.h"; sourceTree = "<group>"; };
+		9EA6A88D252031E0000A29AC /* UINavigationController+YHBackTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+YHBackTitle.m"; sourceTree = "<group>"; };
 		9EADF38425185A6C0009A5BB /* ShopCarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCarCell.swift; sourceTree = "<group>"; };
 		9EADF3862518CD360009A5BB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../realm-swift-5.4.2/ios/swift-12.0/Realm.framework"; sourceTree = "<group>"; };
 		9EADF3872518CD360009A5BB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../realm-swift-5.4.2/ios/swift-12.0/RealmSwift.framework"; sourceTree = "<group>"; };
@@ -236,6 +260,17 @@
 			path = "网络";
 			sourceTree = "<group>";
 		};
+		9EA6A889252031E0000A29AC /* yh_navgation */ = {
+			isa = PBXGroup;
+			children = (
+				9EA6A88C252031E0000A29AC /* UINavigationBar+YHIndicatorImage.h */,
+				9EA6A88A252031E0000A29AC /* UINavigationBar+YHIndicatorImage.m */,
+				9EA6A88B252031E0000A29AC /* UINavigationController+YHBackTitle.h */,
+				9EA6A88D252031E0000A29AC /* UINavigationController+YHBackTitle.m */,
+			);
+			path = yh_navgation;
+			sourceTree = "<group>";
+		};
 		9ECFD2132500852900D8D520 = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +390,7 @@
 		9ECFD2632500977600D8D520 /* Librartys */ = {
 			isa = PBXGroup;
 			children = (
+				9EA6A889252031E0000A29AC /* yh_navgation */,
 				9E3325C82519A46E004F62AB /* 数据库 */,
 				9E4B96F9250F9ABE00A97873 /* 网络 */,
 				9ECFD2642500979400D8D520 /* WRNavigationBar */,
@@ -457,6 +493,7 @@
 				9EADF39D2518D95D0009A5BB /* MeHeaderCell.xib */,
 				9EADF3A02518D9690009A5BB /* MeCommonCell.swift */,
 				9EADF3A12518D9690009A5BB /* MeCommonCell.xib */,
+				9E4B8C97251D9F0700EF41E0 /* AddAddressCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -464,6 +501,7 @@
 		9ECFD2852500E46A00D8D520 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9E4B8C95251CC70B00EF41E0 /* AddressModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -472,6 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				9ECFD25D2500864B00D8D520 /* MeCenterViewController.swift */,
+				9E3325E7251C9519004F62AB /* ShowAddressResultVC.swift */,
+				9E3325E5251C94F5004F62AB /* AddAddressVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -506,6 +546,10 @@
 				9EAECDF42509CE620067D827 /* DetailImageCell.swift */,
 				9EAECDF52509CE620067D827 /* DetailImageCell.xib */,
 				9E65CDF6250CE8D10067EA82 /* AddCarVIew.swift */,
+				9E4B8C9D251DCDD700EF41E0 /* BuyHeaderCell.swift */,
+				9E4B8C9E251DCDD700EF41E0 /* BuyHeaderCell.xib */,
+				9E4B8CA1251DCDE800EF41E0 /* BuyMainCell.swift */,
+				9E4B8CA2251DCDE800EF41E0 /* BuyMainCell.xib */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -523,6 +567,7 @@
 			children = (
 				9ECFD2572500861800D8D520 /* HomeViewController.swift */,
 				9EC1E5942508D55500025265 /* GoodDetailVC.swift */,
+				9E4B8C9B251DCC6200EF41E0 /* PromptlyBuyVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -662,6 +707,8 @@
 				9EAECDF72509CE620067D827 /* DetailImageCell.xib in Resources */,
 				9EBEB97925077085004F5389 /* GoodsCell.xib in Resources */,
 				9ECFD2272500852900D8D520 /* Main.storyboard in Resources */,
+				9E4B8CA0251DCDD700EF41E0 /* BuyHeaderCell.xib in Resources */,
+				9E4B8CA4251DCDE800EF41E0 /* BuyMainCell.xib in Resources */,
 				9EF5B092250B06E00005132A /* RightTopCell.xib in Resources */,
 				9EC1E58D2508AC8100025265 /* CateTableViewCell.xib in Resources */,
 				9EBEB97D25078B9A004F5389 /* BigClassCell.xib in Resources */,
@@ -736,6 +783,7 @@
 				9ECFD26E2500979500D8D520 /* WRCycleScrollView.swift in Sources */,
 				9ECFD27825009E9700D8D520 /* YYBasicContentView.swift in Sources */,
 				9ECFD26C2500979500D8D520 /* WRCustomNavigationBar.swift in Sources */,
+				9E4B8C96251CC70B00EF41E0 /* AddressModel.swift in Sources */,
 				9EB390FC250A14E700ED86E9 /* LeftView.swift in Sources */,
 				9ECFD26B2500979500D8D520 /* WRNavigationBar.swift in Sources */,
 				9ECFD26F2500979500D8D520 /* WRCycleCell.swift in Sources */,
@@ -743,18 +791,23 @@
 				9EB390FE250A14EF00ED86E9 /* RightView.swift in Sources */,
 				9EAECDF62509CE620067D827 /* DetailImageCell.swift in Sources */,
 				9ECFD2582500861800D8D520 /* HomeViewController.swift in Sources */,
+				9E4B8C98251D9F0700EF41E0 /* AddAddressCell.swift in Sources */,
 				9ECFD26D2500979500D8D520 /* WRProxy.swift in Sources */,
 				9E65CDF7250CE8D10067EA82 /* AddCarVIew.swift in Sources */,
 				9EC1E5902508AC9300025265 /* CateCollectionViewCell.swift in Sources */,
 				9EB39101250A1DBE00ED86E9 /* LeftCell.swift in Sources */,
 				9ECFD27725009E9700D8D520 /* YYIrregularityContentView.swift in Sources */,
+				9E4B8C9F251DCDD700EF41E0 /* BuyHeaderCell.swift in Sources */,
+				9EA6A88E252031E0000A29AC /* UINavigationBar+YHIndicatorImage.m in Sources */,
 				9EBEB97825077085004F5389 /* GoodsCell.swift in Sources */,
 				9EB390FA250A0A5C00ED86E9 /* ToolClass.swift in Sources */,
 				9E4B96FD250F9B6B00A97873 /* APIProvider.swift in Sources */,
 				9E4B96FF250F9F5900A97873 /* NetworkManager.swift in Sources */,
+				9EA6A88F252031E0000A29AC /* UINavigationController+YHBackTitle.m in Sources */,
 				9EBEB97C25078B9A004F5389 /* BigClassCell.swift in Sources */,
 				9ECFD28F2501D00000D8D520 /* HomeModel.swift in Sources */,
 				9ECFD2622500967F00D8D520 /* LTNavViewController.swift in Sources */,
+				9E3325E8251C9519004F62AB /* ShowAddressResultVC.swift in Sources */,
 				9EC1E589250873F300025265 /* ActivityTableViewCell.swift in Sources */,
 				9E4B96FB250F9AEA00A97873 /* MoyaConfig.swift in Sources */,
 				9EC1E5822508643F00025265 /* RecomondCell.swift in Sources */,
@@ -769,6 +822,7 @@
 				9EC1E5932508BB6C00025265 /* BannerView.swift in Sources */,
 				9ECFD25C2500864000D8D520 /* ShopCarViewController.swift in Sources */,
 				9EC1E5862508695300025265 /* RecomondCollectionViewCell.swift in Sources */,
+				9E3325E6251C94F5004F62AB /* AddAddressVC.swift in Sources */,
 				9ECFD2202500852900D8D520 /* AppDelegate.swift in Sources */,
 				9ECFD27625009E9700D8D520 /* YYBouncesContentView.swift in Sources */,
 				9ECFD25A2500863500D8D520 /* CategoryViewController.swift in Sources */,
@@ -778,6 +832,8 @@
 				9E3325DB251AE16C004F62AB /* WCDManager.swift in Sources */,
 				9EC1E58C2508AC8100025265 /* CateTableViewCell.swift in Sources */,
 				9EBEB97F2507ADBC004F5389 /* HomeHeaderView.swift in Sources */,
+				9E4B8CA3251DCDE800EF41E0 /* BuyMainCell.swift in Sources */,
+				9E4B8C9C251DCC6200EF41E0 /* PromptlyBuyVC.swift in Sources */,
 				9ECFD2712500984800D8D520 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,6 +26,7 @@ let NBackViewColor = UIColor.init(red: 211/255.0, green: 211/255.0, blue: 211/25
 let GreenColor = UIColor.init(red: 143/255.0, green: 199/255.0, blue: 98/255.0, alpha:1.0)
 let QianGreenColor = UIColor.init(red: 242/255.0, green: 250/255.0, blue: 237/255.0, alpha:1.0)
 let RedColor = UIColor.init(red: 219/255.0, green: 55/255.0, blue: 17/255.0, alpha:1.0)
+let YellowColor = UIColor.init(red: 226/255.0, green: 117/255.0, blue: 52/255.0, alpha:1.0)
 
 // iphone X
 let isIphoneX = ScreenHeigth == 812 ? true : false

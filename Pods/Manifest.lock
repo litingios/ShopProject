@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.9.1)
   - DNSPageView (2.1.0)
+  - DZNEmptyDataSet (1.8.1)
   - ESPullToRefresh (2.9.3)
   - ESTabBarController-swift (2.8.0)
   - FSPagerView (0.8.3)
@@ -33,6 +34,7 @@ PODS:
 
 DEPENDENCIES:
   - DNSPageView
+  - DZNEmptyDataSet
   - ESPullToRefresh
   - ESTabBarController-swift
   - FSPagerView
@@ -55,6 +57,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - DNSPageView
+    - DZNEmptyDataSet
     - ESPullToRefresh
     - ESTabBarController-swift
     - FSPagerView
@@ -87,6 +90,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   DNSPageView: 4d77a61f49a5668ec330fb7bd620d81354371ea7
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   ESPullToRefresh: 0d68daa602b343c81753a1b95e09fd0bfcddfd40
   ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
@@ -108,6 +112,6 @@ SPEC CHECKSUMS:
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 264125642f1a0a117ff678181570a3d19fc463bd
+PODFILE CHECKSUM: 607b4515a2a6638fb8b0e08bc9d343a0cc415d96
 
 COCOAPODS: 1.9.3

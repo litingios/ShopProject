@@ -78,7 +78,6 @@ class GoodDetailVC: LTSuperViewController {
         self.view.backgroundColor = UIColor .white
         self.navigationItem.title = "商品详情"
         
-        self.view .addSubview(self.tableView)
         self.addView.delegate = self
         self.addView.goodsID = self.goodsID
         self.view .addSubview(self.addView)
@@ -88,6 +87,7 @@ class GoodDetailVC: LTSuperViewController {
             make.bottom.equalToSuperview()
             make.height.equalTo(50)
         }
+        self.view .addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview().offset(0)
             make.bottom.equalTo(self.addView.snp.top).offset(0)
@@ -216,7 +216,9 @@ extension GoodDetailVC: AddCarVIewDelegate {
     
     /// 立即购买
     func buyGoodsMethod() {
-        
+        let view = PromptlyBuyVC()
+        view.goodsModel = self.goodsModel
+        self.navigationController?.pushViewController(view, animated: true)
     }
     
 }

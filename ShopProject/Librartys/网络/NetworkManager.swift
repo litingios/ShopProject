@@ -125,17 +125,17 @@ private let networkPlugin = NetworkActivityPlugin.init { changeType, _ in
     case .began:
         print("开始请求网络")
         
-        SVProgressHUD .setDefaultMaskType(SVProgressHUDMaskType.clear)
-        SVProgressHUD .setBackgroundLayerColor(UIColor .blue)
-        SVProgressHUD .setDefaultStyle(SVProgressHUDStyle.light)
-        SVProgressHUD .setForegroundColor(MainColor)
-        SVProgressHUD .setDefaultAnimationType(SVProgressHUDAnimationType.flat)
-        SVProgressHUD .show(withStatus: "加载中")
-        SVProgressHUD .setMinimumDismissTimeInterval(20.0)
+//        SVProgressHUD .setDefaultMaskType(SVProgressHUDMaskType.clear)
+//        SVProgressHUD .setBackgroundLayerColor(UIColor .blue)
+//        SVProgressHUD .setDefaultStyle(SVProgressHUDStyle.light)
+//        SVProgressHUD .setForegroundColor(MainColor)
+//        SVProgressHUD .setDefaultAnimationType(SVProgressHUDAnimationType.flat)
+//        SVProgressHUD .show(withStatus: "加载中")
+//        SVProgressHUD .setMinimumDismissTimeInterval(20.0)
         
     case .ended:
         print("结束")
-        SVProgressHUD .dismiss()
+//        SVProgressHUD .dismiss()
     }
 }
 

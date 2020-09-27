@@ -13,9 +13,11 @@ struct WcdbDataPath {
    static let basePath =  NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/DB/wcdb.db"
 }
 
-/// 设置数据库名称
+/// 设置表名称
 enum DBTableName : String {
     case sampleTable = "GoodItem"
+    case addressTable = "AddressModel"
+    
 }
 
 
@@ -34,13 +36,14 @@ class WCDManager: NSObject {
     private func createDB() -> Database {
        return Database(withPath: WcdbDataPath.basePath)
     }
-    
+
     /// 数据库与表的初始化
     private func createTable() {
         do {
          //1. 创建主数据库main的相关表
            try db?.run(transaction: {
             createTable(table: DBTableName.sampleTable, modelType: GoodItem.self)
+            createTable(table: DBTableName.addressTable, modelType: AddressModel.self)
             })
          
         } catch let error {

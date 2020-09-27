@@ -54,3 +54,4 @@ class GoodItem: NSObject,TableCodable {
     /// 用于获取自增插入后的主键值
     var lastInsertedRowID: Int64 = 0
 }
+
